@@ -10,7 +10,7 @@ namespace ConsoleApp.Geolocation
     {
         static async Task Main(string[] args)
         {
-            string nameSearchingPolygon = args[0];
+            string nameSearchingPolygon = args[0].ToLower();
             int countPointPolygon = int.Parse(args[1]);
             string nameFile = args[2];
 
