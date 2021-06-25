@@ -46,4 +46,16 @@ namespace ConsoleApp.Geolocation
         [JsonProperty("geojson")]
         public GeoJson geojson { get; set; }
     }
+
+    /// <summary>
+    /// класс помещен сюда для удобства работы с ним
+    /// </summary>
+    public class GeoJson
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("coordinates")]
+        public object[] Coordinates { get; set; }
+    }
 }
