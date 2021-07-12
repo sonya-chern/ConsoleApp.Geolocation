@@ -10,40 +10,47 @@ namespace ConsoleApp.Geolocation
     {
         static async Task Main(string[] args)
         {
-            string nameSearchingPolygon = args[0].ToLower();
-            int countPointPolygon = int.Parse(args[1]);
-            string nameFile = args[2];
-
             /// <summary>
             /// данные для теста
             /// </summary>
             //string nameSearchingPolygon = "москва";
             //int countPointPolygon = 10;
             //string nameFile = "jsonDowloading.txt";
-
-
-            LoadingJsonNominatimOpenstreetmap lj = new LoadingJsonNominatimOpenstreetmap(nameSearchingPolygon);
-            await lj.CreateFileDataJson(nameFile);
-
-            /// <summary>
-            /// вывод в консоль только определенного количества точек
-            /// </summary>
-            var inputStream = File.ReadAllText(nameFile);
-            var jsonDataCollection = JsonConvert.DeserializeObject<List<Polygon>>(inputStream);
-            foreach (var jsonData in jsonDataCollection)
+            if (СheckingInputData.СheckSourceData(args))
             {
-                Console.WriteLine(jsonData.DisplayName);
-                int counter = 0;
-                foreach (var obj in jsonData.geojson.Coordinates)
+                string nameSearchingPolygon = args[0].ToLower();
+                int countPointPolygon = Int32.Parse(args[1]);
+                string nameFile = args[2];
+
+                LoadingJsonNominatimOpenstreetmap lj = new LoadingJsonNominatimOpenstreetmap(nameSearchingPolygon, nameFile);
+                await lj.CreateFileDataJson();
+
+                /// <summary>
+                /// вывод в консоль только определенного количества точек
+                /// </summary>
+                var inputStream = File.ReadAllText(nameFile);
+                var jsonDataCollection = JsonConvert.DeserializeObject<List<Polygon>>(inputStream);
+                foreach (var jsonData in jsonDataCollection)
                 {
-                    if ((counter % countPointPolygon) == 0)
+                    Console.WriteLine(jsonData.DisplayName);
+                    int counter = 0;
+                    foreach (var obj in jsonData.Geojson.Coordinates)
                     {
-                        Console.WriteLine(obj);
+                        if ((counter % countPointPolygon) == 0)
+                        {
+                            Console.Write(", ", obj);
+                        }
+                        counter++;
                     }
-                    counter++;
                 }
+                Console.WriteLine("Запрос выполнен");
             }
-            Console.WriteLine("Запрос выполнен");
+            
+            else
+            {
+                Console.WriteLine("Try entering the data again");
+            }
+           
         }
     }
 }

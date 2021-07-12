@@ -11,39 +11,37 @@ namespace ConsoleApp.Geolocation
     /// </summary>
     public class LoadingJsonNominatimOpenstreetmap
     {
-        private string _NameSearchingPolygon { get; set; }
+        private string NameSearchingPolygon { get; set; }
+        private string NameFile { get; set; }
 
-        public LoadingJsonNominatimOpenstreetmap(string newNameSearchingPolygon)
+        public LoadingJsonNominatimOpenstreetmap(string newNameSearchingPolygon, string nameFile)
         {
-            _NameSearchingPolygon = newNameSearchingPolygon;
+            NameSearchingPolygon = newNameSearchingPolygon;
+            NameFile = nameFile;
         }
-        public async Task CreateFileDataJson(string nameFile)
+        public async Task CreateFileDataJson()
         {
-            string adressUrlFromUser = $"https://nominatim.openstreetmap.org/search?q={_NameSearchingPolygon}&format=json&polygon_geojson=1";
+            string adressUrlFromUser = $"https://nominatim.openstreetmap.org/search?q={NameSearchingPolygon}&format=json&polygon_geojson=1";
             Console.WriteLine(adressUrlFromUser);
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(adressUrlFromUser);
             request.UseDefaultCredentials = true;
             request.UserAgent = "[any words that is more than 5 characters]";
             HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
             List<string> ListStrings = new List<string>();
-            List<Polygon> polygons = new List<Polygon>();
             using (Stream stream = response.GetResponseStream())
             {
-                using (StreamReader reader = new StreamReader(stream))
-                {
+                using StreamReader reader = new StreamReader(stream);
                     string line = "";
                     while ((line = reader.ReadLine()) != null)
                     {
                         ListStrings.Add(line);
-
                     }
 
-                    if (File.Exists(nameFile))
+                    if (File.Exists(NameFile))
                     {
-                        File.Delete(nameFile);
+                        File.Delete(NameFile);
                     }
-                    File.WriteAllLines(nameFile, ListStrings);
-                }
+                    File.WriteAllLines(NameFile, ListStrings);
             }
             response.Close();
         }

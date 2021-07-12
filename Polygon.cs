@@ -41,7 +41,7 @@ namespace ConsoleApp.Geolocation
         public string Importance { get; set; }
 
         [JsonProperty("geojson")]
-        public GeoJson geojson { get; set; }
+        public GeoJson Geojson { get; set; }
     }
 
     /// <summary>
