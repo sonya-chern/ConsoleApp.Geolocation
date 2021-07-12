@@ -1,0 +1,14 @@
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\ConsoleApp.Geolocation.exe
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\ConsoleApp.Geolocation.deps.json
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\ConsoleApp.Geolocation.runtimeconfig.json
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\ConsoleApp.Geolocation.runtimeconfig.dev.json
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\ConsoleApp.Geolocation.dll
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\ConsoleApp.Geolocation.pdb
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.AssemblyInfoInputs.cache
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.AssemblyInfo.cs
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.csproj.CoreCompileInputs.cache
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.dll
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.pdb
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.genruntimeconfig.cache
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Sofia\Desktop\C#\ConsoleApp.Geolocation\obj\Debug\netcoreapp3.1\ConsoleApp.Geolocation.csproj.CopyComplete

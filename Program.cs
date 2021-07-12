@@ -10,12 +10,6 @@ namespace ConsoleApp.Geolocation
     {
         static async Task Main(string[] args)
         {
-            /// <summary>
-            /// данные для теста
-            /// </summary>
-            //string nameSearchingPolygon = "москва";
-            //int countPointPolygon = 10;
-            //string nameFile = "jsonDowloading.txt";
             if (СheckingInputData.СheckSourceData(args))
             {
                 string nameSearchingPolygon = args[0].ToLower();
